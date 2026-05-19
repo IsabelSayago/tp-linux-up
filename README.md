@@ -24,8 +24,6 @@ Para que los integrantes pudieran trabajar en la VM desde sus casas sin estar en
 ssh root@100.127.21.62
 ```
 
-ssh root@100.127.21.62
-
 ## División de tareas
 | Integrante | Secciones |
 |---|---|
