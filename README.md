@@ -70,3 +70,51 @@ Comandos de verificación:
 - Verificó la base de datos ingenieria.
 - Verificó las tablas alumnos, modulos y notas.
 - Actualizó el README con el estado del TP.
+
+## Backup y cron
+
+Se creó el script `/opt/scripts/backup_full.sh` para realizar backups comprimidos en formato `.tar.gz`.
+
+El script permite recibir dos argumentos:
+
+- Origen
+- Destino
+
+También incluye la opción de ayuda:
+
+- `/opt/scripts/backup_full.sh -help`
+
+Pruebas realizadas manualmente:
+
+- `/opt/scripts/backup_full.sh /var/log /backup_dir`
+- `/opt/scripts/backup_full.sh /www_dir /backup_dir`
+
+Archivos generados en `/backup_dir`:
+
+- `log_bkp_20260519.tar.gz`
+- `www_dir_bkp_20260519.tar.gz`
+
+Se configuraron las siguientes tareas en el crontab de root:
+
+- `0 0 * * * /opt/scripts/backup_full.sh /var/log /backup_dir`
+- `0 23 * * 1,3,5 /opt/scripts/backup_full.sh /www_dir /backup_dir`
+
+Se verificó que el servicio cron esté activo con:
+
+- `systemctl status cron`
+
+## Entregables finales
+
+Se generaron los archivos comprimidos solicitados:
+
+- `root.tar.gz`
+- `etc.tar.gz`
+- `opt.tar.gz`
+- `www_dir.tar.gz`
+- `backup_dir.tar.gz`
+
+También se comprimió `/var` y se dividió en partes de 50 MB:
+
+- `var.tar.gz.part_aa`
+- `var.tar.gz.part_ab`
+- `var.tar.gz.part_ac`
