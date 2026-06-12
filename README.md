@@ -44,3 +44,7 @@ ssh root@100.127.21.62
 - Sección 4: Disco de 10 GB agregado, particiones /www_dir (3 GB) y /backup_dir (6 GB) creadas y montaje automático configurado
 - Sección 5: Script backup_full.sh creado y cron configurado
 - Sección 6: Entregables comprimidos y subidos a GitHub
+
+
+## Web funcionando
+![Captura de la web funcionando](Web.png)
